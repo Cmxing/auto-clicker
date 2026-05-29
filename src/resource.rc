@@ -1,0 +1,53 @@
+#include <windows.h>
+#include <commctrl.h>
+
+// Inline resource IDs (RC compiler may not resolve macros from UTF-8 headers)
+#define IDD_MAIN                101
+#define IDC_CPS_MIN             1001
+#define IDC_CPS_MAX             1002
+#define IDC_CPS_MIN_SPIN        1003
+#define IDC_CPS_MAX_SPIN        1004
+#define IDC_CLICK_TYPE          1005
+#define IDC_HOTKEY              1006
+#define IDC_HOTKEY_SET          1007
+#define IDC_ENABLE_TIMER        1008
+#define IDC_TIMER_HOUR          1009
+#define IDC_TIMER_MINUTE        1010
+#define IDC_TIMER_DURATION      1011
+#define IDC_BTN_START           1012
+#define IDC_BTN_STOP            1013
+#define IDC_STATUS              1014
+#define IDC_ANTI_DETECT_INFO    1015
+#define IDC_CPS_CURRENT         1016
+
+IDD_MAIN DIALOGEX 0, 0, 310, 210
+STYLE WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX | DS_CENTER
+CAPTION "PC Auto Clicker"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    LTEXT           "Click Speed (CPS):", -1, 12, 12, 96, 12
+    EDITTEXT        IDC_CPS_MIN, 110, 10, 40, 14, ES_NUMBER | ES_CENTER
+    LTEXT           "~", -1, 154, 12, 8, 12
+    EDITTEXT        IDC_CPS_MAX, 164, 10, 40, 14, ES_NUMBER | ES_CENTER
+    LTEXT           "Cur: --", IDC_CPS_CURRENT, 210, 12, 90, 12
+    LTEXT           "Click Type:", -1, 12, 33, 96, 12
+    COMBOBOX        IDC_CLICK_TYPE, 110, 30, 100, 80, CBS_DROPDOWNLIST
+    LTEXT           "Toggle Hotkey:", -1, 12, 54, 96, 12
+    EDITTEXT        IDC_HOTKEY, 110, 51, 56, 14, ES_CENTER | ES_READONLY
+    PUSHBUTTON      "Set", IDC_HOTKEY_SET, 170, 50, 40, 15
+    GROUPBOX        "Timer Mode", -1, 8, 72, 294, 50
+    CONTROL         "Enable Timer", IDC_ENABLE_TIMER, "Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP, 18, 88, 80, 14
+    LTEXT           "Target", -1, 18, 106, 30, 12
+    EDITTEXT        IDC_TIMER_HOUR, 50, 104, 26, 14, ES_NUMBER | ES_CENTER
+    LTEXT           ":", -1, 78, 106, 8, 12
+    EDITTEXT        IDC_TIMER_MINUTE, 88, 104, 26, 14, ES_NUMBER | ES_CENTER
+    LTEXT           "Duration", -1, 122, 106, 38, 12
+    EDITTEXT        IDC_TIMER_DURATION, 162, 104, 32, 14, ES_NUMBER | ES_CENTER
+    LTEXT           "min (0=infinite)", -1, 200, 106, 80, 12
+    PUSHBUTTON      "Start (F6)", IDC_BTN_START, 60, 135, 88, 24
+    PUSHBUTTON      "Stop", IDC_BTN_STOP, 162, 135, 88, 24
+    LTEXT           "Status: Stopped", IDC_STATUS, 12, 168, 286, 12
+    LTEXT           "Anti-Detect: SendInput | Bezier | Random | Window-Aware",
+                    IDC_ANTI_DETECT_INFO, 12, 186, 286, 12
+END

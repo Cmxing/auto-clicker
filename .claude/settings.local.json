@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(where cmake *)",
+      "Bash(cmake --version)",
+      "Bash(where cl *)",
+      "Bash(where msbuild *)",
+      "Read(//c/Program Files/**)",
+      "Read(//c/Program Files \\(x86\\)/**)",
+      "Bash(dir \"C:\\\\Program Files\\\\Microsoft Visual Studio\")",
+      "Bash(dir \"C:\\\\Program Files\\\\CMake\")",
+      "Bash(where gcc *)",
+      "Bash(where g++)",
+      "Bash(where clang *)",
+      "Bash(where python *)",
+      "Bash(where python3 *)",
+      "Bash(where node *)",
+      "Bash(where go *)",
+      "Bash(go version *)",
+      "Bash(winget --version)"
+    ]
+  }
+}
